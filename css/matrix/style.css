@@ -1,0 +1,34 @@
+body.wp-fullscreen-editor *
+{
+	color: #00df00 !important;
+	background: transparent !important;
+}
+
+#wp-fullscreen-body input[type=text],
+#wp-fullscreen-body textarea,
+#wp-fullscreen-body #wp-fullscreen-title-prompt-text
+{
+	color: #00df00 !important;
+}
+
+.wp-fullscreen-focus #wp-fullscreen-title,
+.wp-fullscreen-focus #wp-fullscreen-container
+{
+	border-color: #00df00 !important;
+}
+#fullscreen-overlay
+{
+	background-color: black !important;
+}
+
+#wp-fullscreen-count
+{
+	margin-top: 10px;
+	color: #00df00 !important;
+}
+
+#wp-fullscreen-tagline
+{
+	margin-top: 10px;
+	color: #00df00 !important;
+}

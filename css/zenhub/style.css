@@ -1,0 +1,44 @@
+body.wp-fullscreen-editor *
+{
+	color: #DBE0E0 !important;
+	background: transparent !important;
+}
+
+#wp-fullscreen-body #wp-fullscreen-title-prompt-text
+{
+	color: #A4B1B1 !important;
+}
+
+#wp-fullscreen-body #wp-fullscreen-title
+{
+	color: #DBE0E0 !important;
+}
+
+#wp-fullscreen-body input[type=text],
+#wp-fullscreen-body textarea
+{
+	color: #DBE0E0 !important;
+}
+
+.wp-fullscreen-focus #wp-fullscreen-title,
+.wp-fullscreen-focus #wp-fullscreen-container
+{
+	border-color: #A4B1B1 !important;
+}
+
+#fullscreen-overlay
+{
+	background-color: #1D1F21 !important;
+}
+
+#wp-fullscreen-count
+{
+	margin-top: 10px;
+	color: #A4B1B1 !important;
+}
+
+#wp-fullscreen-tagline
+{
+	margin-top: 10px;
+	color: #A4B1B1 !important;
+}

@@ -1,0 +1,34 @@
+body.wp-fullscreen-editor *
+{
+	color: #F8F8F2 !important;
+	background: transparent !important;
+}
+
+#wp-fullscreen-body input[type=text],
+#wp-fullscreen-body textarea,
+#wp-fullscreen-body #wp-fullscreen-title-prompt-text
+{
+	color: #F8F8F2 !important;
+}
+
+.wp-fullscreen-focus #wp-fullscreen-title,
+.wp-fullscreen-focus #wp-fullscreen-container
+{
+	border-color: #F8F8F2 !important;
+}
+#fullscreen-overlay
+{
+	background-color: #272822 !important;
+}
+
+#wp-fullscreen-count
+{
+	margin-top: 10px;
+	color: #F8F8F2 !important;
+}
+
+#wp-fullscreen-tagline
+{
+	margin-top: 10px;
+	color: #F8F8F2 !important;
+}
