@@ -2,7 +2,7 @@
 Contributors: khromov
 Tags: editor, themes, dark theme
 Requires at least: 3.4.2
-Tested up to: 3.5.1
+Tested up to: 3.6
 Stable tag: 2.1
 License: GPL2
 
