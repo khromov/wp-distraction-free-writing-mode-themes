@@ -39,6 +39,9 @@
 		
 		function build($template, $v, $prefix)
 		{
+			//Added support for nested templates
+			$microtemplate = &$this;
+
 			ob_start();
 
 			if(file_exists($prefix.$template.'.php'))

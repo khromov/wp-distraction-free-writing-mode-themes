@@ -3,9 +3,9 @@
 Plugin Name: Distraction Free Writing mode Themes
 Plugin URI: http://wordpress.org/extend/plugins/distraction-free-writing-mode-themes/
 Description: Provides dark and light themes for for Distraction Free Writing mode. Use one of the beautiful built-in themes or write your own.
-Version: 2.2-beta
+Version: 3.0
 License: GPL2
-Author: khromov
+Author: khromov, m_uysl
 Author URI: http://khromov.wordpress.com
 License: GPL2
 Text Domain: dfwmdt
@@ -59,15 +59,7 @@ class DFWMDT {
 
 	function force_distraction_free_mode() {
 		global $pagenow;
-		if ( ( $pagenow == 'post-new.php' || ( $pagenow == 'post.php' && $_REQUEST['action'] == "edit" ) ) && get_option( 'dfwmt_force_distraction_free_mode' ) == 1 ) {
-			?>
-			<script type="text/javascript">
-				jQuery(document).ready(function () {
-					fullscreen.on();
-				});
-			</script>
-		<?php
-		}
+		echo $this->template->t('force_dfwm_js', array('current_page' => $pagenow, 'current_action' => isset($_REQUEST['action']) ? $_REQUEST['action'] : ''));
 	}
 
 
@@ -83,8 +75,8 @@ class DFWMDT {
 		add_settings_section( 'dfwmdt-main', __( 'Main configuration', self::text_domain ), array( &$this, 'admin_main_part' ), 'dfwmdt' );
 
 		add_settings_field( 'dfwmt_selected_theme', __( 'Selected theme', self::text_domain ), array( &$this, 'field_selected_theme' ), 'dfwmdt', 'dfwmdt-main' );
-		add_settings_field( 'dfwmt_force_distraction_free_mode', __( 'Force Distraction Free Writing mode', self::text_domain ), array( &$this, 'distraction_free_field' ), 'dfwmdt', 'dfwmdt-main' );
 		add_settings_field( 'dfwmt_custom_theme_css', __( 'Custom CSS', self::text_domain ), array( &$this, 'field_custom_theme_css' ), 'dfwmdt', 'dfwmdt-main' );
+		add_settings_field( 'dfwmt_force_distraction_free_mode', __( 'Force Distraction Free Writing mode', self::text_domain ), array( &$this, 'distraction_free_field' ), 'dfwmdt', 'dfwmdt-main' );
 	}
 
 	function admin_main() {
@@ -94,10 +86,7 @@ class DFWMDT {
 	}
 
 	function distraction_free_field() {
-		?>
-		<input type="checkbox" name="dfwmt_force_distraction_free_mode" value="1" <?php checked( get_option( 'dfwmt_force_distraction_free_mode' ), 1 ); ?> />
-		<label><?php _e( 'Yes', self::text_domain ); ?></label>
-	<?php
+		echo $this->template->t( 'admin/fields/force_dfwmt' );
 	}
 
 	function field_selected_theme() {
@@ -148,14 +137,14 @@ class DFWMDT {
 
 	/**
 	 * Which theme will be loaded?
-	 * If user already has a theme use it!
+	 * If user has selected a theme, use that.
 	 * @return mixed|void
 	 */
 	function dfw_current_theme() {
 		$user_theme    = get_user_option( 'dfwmt_selected_theme' );
 		$general_theme = get_option( 'dfwmt_selected_theme' );
 
-		if ( ! empty( $user_theme ) ) {
+		if ( $user_theme !== false && $user_theme !== 'none' ) {
 			return $user_theme;
 		}
 		return $general_theme;
@@ -202,20 +191,7 @@ class DFWMDT {
 	 * @param $user
 	 */
 	function dfwmt_user_theme_selection( $user ) {
-		?>
-		<table class="form-table">
-
-			<tr>
-				<th><label for="dfwmt_selected_theme"><?php _e( 'Distraction Free Theme', self::text_domain ); ?></label></th>
-
-				<td>
-					<?php echo $this->template->t( 'admin/fields/user_theme_field', array( 'working_directory' => dirname( __FILE__ ), 'plugin_url' => plugins_url( '', __FILE__ ) ) ); ?>
-				</td>
-			</tr>
-
-		</table>
-
-	<?php
+		echo $this->template->t( 'user/user_theme_selection', array('plugin_path' => __FILE__) );
 	}
 
 	function dfwmt_save_user_theme_selection( $user_id ) {

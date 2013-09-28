@@ -1,0 +1,2 @@
+<input type="checkbox" name="dfwmt_force_distraction_free_mode" value="1" <?php checked( get_option( 'dfwmt_force_distraction_free_mode' ), 1 ); ?> />
+<label><?php _e( 'Force Distraction Free Writing mode', 'dfwmdt' ) ?></label>
