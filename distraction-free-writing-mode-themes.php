@@ -1,5 +1,5 @@
 <?php
-/* TODO: Test shorttag disabled functionality
+/*
 Plugin Name: Distraction Free Writing mode Themes
 Plugin URI: http://wordpress.org/extend/plugins/distraction-free-writing-mode-themes/
 Description: Provides dark and light themes for for Distraction Free Writing mode. Use one of the beautiful built-in themes or write your own.
@@ -8,19 +8,22 @@ License: GPL2
 Author: khromov
 Author URI: http://khromov.wordpress.com
 License: GPL2
+Text Domain: dfwmdt
+Domain Path: /languages/
 */
 
 $main = new DFWMDT();
 
 class DFWMDT {
 	var $template;
+	const text_domain = "dfwmdt";
 
 	function __construct() {
 		/**
 		 * Register hooks, languages etc
 		 **/
 		register_activation_hook( __FILE__, array( 'DFWMDT', 'activate' ) );
-		load_plugin_textdomain( 'distraction-free-writing-mode-themes', false, basename( dirname( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( self::text_domain, false, basename( dirname( __FILE__ ) ) . '/languages' );
 
 		/**
 		 * http://wordpress.org/support/topic/add_editor_style-for-plugin?replies=3
@@ -62,7 +65,7 @@ class DFWMDT {
 
 
 	function register_admin_menus() {
-		add_submenu_page( 'options-general.php', __( "Distraction Free Writing mode Themes Configuration" ), __( "DFWM Themes" ), 'manage_options', 'dfwmdt', array( &$this, 'admin_main' ) );
+		add_submenu_page( 'options-general.php', __( "Distraction Free Writing mode Themes Configuration", self::text_domain ), __( "DFWM Themes", self::text_domain ), 'manage_options', 'dfwmdt', array( &$this, 'admin_main' ) );
 	}
 
 	function register_settings() {
@@ -70,11 +73,11 @@ class DFWMDT {
 		register_setting( 'dfwmdt-group', 'dfwmt_force_distraction_free_mode', array( &$this, 'sanitize_distraction_free_mode' ) );
 		register_setting( 'dfwmdt-group', 'dfwmt_custom_theme_css', array( &$this, 'sanitize_custom_theme_css' ) );
 
-		add_settings_section( 'dfwmdt-main', __( 'Main configuration' ), array( &$this, 'admin_main_part' ), 'dfwmdt' );
+		add_settings_section( 'dfwmdt-main', __( 'Main configuration', self::text_domain ), array( &$this, 'admin_main_part' ), 'dfwmdt' );
 
-		add_settings_field( 'dfwmt_selected_theme', __( 'Selected theme' ), array( &$this, 'field_selected_theme' ), 'dfwmdt', 'dfwmdt-main' );
-		add_settings_field( 'dfwmt_force_distraction_free_mode', __( 'Force Distraction Free Writing mode' ), array( &$this, 'distraction_free_field' ), 'dfwmdt', 'dfwmdt-main' );
-		add_settings_field( 'dfwmt_custom_theme_css', __( 'Custom CSS' ), array( &$this, 'field_custom_theme_css' ), 'dfwmdt', 'dfwmdt-main' );
+		add_settings_field( 'dfwmt_selected_theme', __( 'Selected theme',self::text_domain ), array( &$this, 'field_selected_theme' ), 'dfwmdt', 'dfwmdt-main' );
+		add_settings_field( 'dfwmt_force_distraction_free_mode', __( 'Force Distraction Free Writing mode',self::text_domain ), array( &$this, 'distraction_free_field' ), 'dfwmdt', 'dfwmdt-main' );
+		add_settings_field( 'dfwmt_custom_theme_css', __( 'Custom CSS',self::text_domain ), array( &$this, 'field_custom_theme_css' ), 'dfwmdt', 'dfwmdt-main' );
 	}
 
 	function admin_main() {
@@ -86,7 +89,7 @@ class DFWMDT {
 	function distraction_free_field() {
 		?>
 		<input type="checkbox" name="dfwmt_force_distraction_free_mode" value="1" <?php checked( get_option( 'dfwmt_force_distraction_free_mode' ), 1 ); ?> />
-		<label><?php _e( 'Yes' ); ?></label>
+		<label><?php _e( 'Yes', self::text_domain ); ?></label>
 	<?php
 	}
 
@@ -108,7 +111,7 @@ class DFWMDT {
 			return $in;
 		}
 		else {
-			die( __( 'DFWM Themes: Incorrect or malicious form data received.' ) );
+			die( __( 'DFWM Themes: Incorrect or malicious form data received.', self::text_domain ) );
 		}
 		//return sanitize_title($in);
 	}

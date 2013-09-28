@@ -1,7 +1,7 @@
 <div class="wrap">
 	<?php screen_icon(); ?>
 	<h2>
-		Distraction Free Writing mode Themes Configuration
+		<?php _e('Distraction Free Writing mode Themes Configuration','dfwmdt');?>
 	</h2>
 	<form method="post" action="options.php"> 
 	<?php
