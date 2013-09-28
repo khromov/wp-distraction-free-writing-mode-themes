@@ -49,7 +49,7 @@ class DFWMDT {
 
 	function force_distraction_free_mode() {
 		global $pagenow;
-		if ( $pagenow == 'post-new.php' && get_option( 'dfwmt_force_zen_mode' ) == 1 ) {
+		if ( ($pagenow == 'post-new.php' || ( $pagenow == 'post.php' && $_REQUEST['action'] == "edit" ) )  && get_option( 'dfwmt_force_distraction_free_mode' ) == 1 ) {
 			?>
 			<script type="text/javascript">
 				jQuery(document).ready(function () {
@@ -67,13 +67,13 @@ class DFWMDT {
 
 	function register_settings() {
 		register_setting( 'dfwmdt-group', 'dfwmt_selected_theme', array( &$this, 'sanitize_selected_theme' ) );
-		register_setting( 'dfwmdt-group', 'dfwmt_force_zen_mode', array( &$this, 'sanitize_force_mode' ) );
+		register_setting( 'dfwmdt-group', 'dfwmt_force_distraction_free_mode', array( &$this, 'sanitize_distraction_free_mode' ) );
 		register_setting( 'dfwmdt-group', 'dfwmt_custom_theme_css', array( &$this, 'sanitize_custom_theme_css' ) );
 
 		add_settings_section( 'dfwmdt-main', __( 'Main configuration' ), array( &$this, 'admin_main_part' ), 'dfwmdt' );
 
-		add_settings_field( 'dfwmt_force_zen_mode', __( 'Force Zen mode' ), array( &$this, 'zen_mode_fied' ), 'dfwmdt', 'dfwmdt-main' );
 		add_settings_field( 'dfwmt_selected_theme', __( 'Selected theme' ), array( &$this, 'field_selected_theme' ), 'dfwmdt', 'dfwmdt-main' );
+		add_settings_field( 'dfwmt_force_distraction_free_mode', __( 'Force Distraction Free Writing mode' ), array( &$this, 'distraction_free_field' ), 'dfwmdt', 'dfwmdt-main' );
 		add_settings_field( 'dfwmt_custom_theme_css', __( 'Custom CSS' ), array( &$this, 'field_custom_theme_css' ), 'dfwmdt', 'dfwmdt-main' );
 	}
 
@@ -83,8 +83,11 @@ class DFWMDT {
 		echo $this->template->t( 'admin/footer' );
 	}
 
-	function zen_mode_fied() {
-		echo $this->template->t( 'admin/fields/zen_field' );
+	function distraction_free_field() {
+		?>
+		<input type="checkbox" name="dfwmt_force_distraction_free_mode" value="1" <?php checked( get_option( 'dfwmt_force_distraction_free_mode' ), 1 ); ?> />
+		<label><?php _e( 'Yes' ); ?></label>
+	<?php
 	}
 
 	function field_selected_theme() {
@@ -121,7 +124,7 @@ class DFWMDT {
 	 *
 	 * @return bool
 	 */
-	function sanitize_force_mode( $value = false ) {
+	function sanitize_distraction_free_mode( $value = false ) {
 		if ( $value ) {
 			return true;
 		}
