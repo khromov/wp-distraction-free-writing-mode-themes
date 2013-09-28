@@ -1,8 +1,8 @@
 === Distraction Free Writing mode Themes ===
-Contributors: khromov
+Contributors: khromov, m_uysl
 Tags: editor, themes, dark theme
 Requires at least: 3.4.2
-Tested up to: 3.6
+Tested up to: 3.6.1
 Stable tag: 2.1
 License: GPL2
 
