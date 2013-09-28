@@ -3,7 +3,7 @@
 Plugin Name: Distraction Free Writing mode Themes
 Plugin URI: http://wordpress.org/extend/plugins/distraction-free-writing-mode-themes/
 Description: Provides dark and light themes for for Distraction Free Writing mode. Use one of the beautiful built-in themes or write your own.
-Version: 2.2-alpha
+Version: 2.2-beta
 License: GPL2
 Author: khromov
 Author URI: http://khromov.wordpress.com
@@ -15,7 +15,7 @@ Domain Path: /languages/
 $main = new DFWMDT();
 
 class DFWMDT {
-	var $template;
+	public $template;
 	const text_domain = "dfwmdt";
 
 	function __construct() {
@@ -40,6 +40,13 @@ class DFWMDT {
 		add_action( 'admin_init', array( &$this, 'register_settings' ) );
 		add_action( 'admin_footer', array( &$this, 'force_distraction_free_mode' ) );
 
+
+		add_action( 'show_user_profile', array( &$this, 'dfwmt_user_theme_selection' ) );
+		add_action( 'edit_user_profile', array( &$this, 'dfwmt_user_theme_selection' ) );
+
+		add_action( 'personal_options_update', array( &$this, 'dfwmt_save_user_theme_selection' ) );
+		add_action( 'edit_user_profile_update', array( &$this, 'dfwmt_save_user_theme_selection' ) );
+
 		/**
 		 * Include libs and dependencies
 		 **/
@@ -52,7 +59,7 @@ class DFWMDT {
 
 	function force_distraction_free_mode() {
 		global $pagenow;
-		if ( ($pagenow == 'post-new.php' || ( $pagenow == 'post.php' && $_REQUEST['action'] == "edit" ) )  && get_option( 'dfwmt_force_distraction_free_mode' ) == 1 ) {
+		if ( ( $pagenow == 'post-new.php' || ( $pagenow == 'post.php' && $_REQUEST['action'] == "edit" ) ) && get_option( 'dfwmt_force_distraction_free_mode' ) == 1 ) {
 			?>
 			<script type="text/javascript">
 				jQuery(document).ready(function () {
@@ -75,9 +82,9 @@ class DFWMDT {
 
 		add_settings_section( 'dfwmdt-main', __( 'Main configuration', self::text_domain ), array( &$this, 'admin_main_part' ), 'dfwmdt' );
 
-		add_settings_field( 'dfwmt_selected_theme', __( 'Selected theme',self::text_domain ), array( &$this, 'field_selected_theme' ), 'dfwmdt', 'dfwmdt-main' );
-		add_settings_field( 'dfwmt_force_distraction_free_mode', __( 'Force Distraction Free Writing mode',self::text_domain ), array( &$this, 'distraction_free_field' ), 'dfwmdt', 'dfwmdt-main' );
-		add_settings_field( 'dfwmt_custom_theme_css', __( 'Custom CSS',self::text_domain ), array( &$this, 'field_custom_theme_css' ), 'dfwmdt', 'dfwmdt-main' );
+		add_settings_field( 'dfwmt_selected_theme', __( 'Selected theme', self::text_domain ), array( &$this, 'field_selected_theme' ), 'dfwmdt', 'dfwmdt-main' );
+		add_settings_field( 'dfwmt_force_distraction_free_mode', __( 'Force Distraction Free Writing mode', self::text_domain ), array( &$this, 'distraction_free_field' ), 'dfwmdt', 'dfwmdt-main' );
+		add_settings_field( 'dfwmt_custom_theme_css', __( 'Custom CSS', self::text_domain ), array( &$this, 'field_custom_theme_css' ), 'dfwmdt', 'dfwmdt-main' );
 	}
 
 	function admin_main() {
@@ -139,26 +146,42 @@ class DFWMDT {
 	function admin_main_part() {
 	}
 
+	/**
+	 * Which theme will be loaded?
+	 * If user already has a theme use it!
+	 * @return mixed|void
+	 */
+	function dfw_current_theme() {
+		$user_theme    = get_user_option( 'dfwmt_selected_theme' );
+		$general_theme = get_option( 'dfwmt_selected_theme' );
+
+		if ( ! empty( $user_theme ) ) {
+			return $user_theme;
+		}
+		return $general_theme;
+	}
+
+
 	/** Add custom CSS to MCE and wordpress post page **/
 	function filter_mce_css( $mce_css ) {
-		$df_theme = get_option( 'dfwmt_selected_theme' );
-		if ( $df_theme == 'custom' ) {
+		if ( $this->dfw_current_theme() == 'custom' ) {
 			$mce_css .= ', ' . plugins_url( 'css/custom.css.php', __FILE__ );
 		}
-		else if ( $df_theme != 'default' ) {
-			$mce_css .= ', ' . plugins_url( 'css/' . $df_theme . '/style.css', __FILE__ );
+		else if ( $this->dfw_current_theme() != 'default' ) {
+			$mce_css .= ', ' . plugins_url( 'css/' . $this->dfw_current_theme() . '/style.css', __FILE__ );
 		}
 
 		return $mce_css;
 	}
 
+
 	function dfw_terminal_style() {
-		$df_theme = get_option( 'dfwmt_selected_theme' );
-		if ( $df_theme == 'custom' ) {
+
+		if ( $this->dfw_current_theme() == 'custom' ) {
 			wp_enqueue_style( 'fullscreen-style', plugins_url( 'css/custom.css.php', __FILE__ ) );
 		}
-		else if ( $df_theme != 'default' ) {
-			wp_enqueue_style( 'fullscreen-style', plugins_url( 'css/' . $df_theme . '/style.css', __FILE__ ) );
+		else if ( $this->dfw_current_theme() != 'default' ) {
+			wp_enqueue_style( 'fullscreen-style', plugins_url( 'css/' . $this->dfw_current_theme() . '/style.css', __FILE__ ) );
 		}
 	}
 
@@ -172,4 +195,34 @@ class DFWMDT {
 		$template = new MicroTemplate( dirname( __FILE__ ) . '/templates/' );
 		add_option( 'dfwmt_custom_theme_css', $template->t( 'admin/css/default-custom-css' ) );
 	}
+
+	/**
+	 * Adding custom field to users profile page
+	 *
+	 * @param $user
+	 */
+	function dfwmt_user_theme_selection( $user ) {
+		?>
+		<table class="form-table">
+
+			<tr>
+				<th><label for="dfwmt_selected_theme"><?php _e( 'Distraction Free Theme', self::text_domain ); ?></label></th>
+
+				<td>
+					<?php echo $this->template->t( 'admin/fields/user_theme_field', array( 'working_directory' => dirname( __FILE__ ), 'plugin_url' => plugins_url( '', __FILE__ ) ) ); ?>
+				</td>
+			</tr>
+
+		</table>
+
+	<?php
+	}
+
+	function dfwmt_save_user_theme_selection( $user_id ) {
+		if ( ! current_user_can( 'edit_user', $user_id ) )
+			return false;
+
+		update_user_meta( $user_id, 'dfwmt_selected_theme', $_POST['dfwmt_selected_theme'] );
+	}
+
 }
