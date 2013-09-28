@@ -1,0 +1,91 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Distraction Free Writing mode Themes\n"
+"POT-Creation-Date: 2013-09-28 21:57+0200\n"
+"PO-Revision-Date: 2013-09-28 21:57+0200\n"
+"Last-Translator: Mustafa Uysal <mustafa@lettoblog.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../distraction-free-writing-mode-themes.php:68
+#: ../templates/admin/main.php:4
+msgid "Distraction Free Writing mode Themes Configuration"
+msgstr "Basit Mod Tema Ayarları"
+
+#: ../distraction-free-writing-mode-themes.php:68
+msgid "DFWM Themes"
+msgstr "DFWM Temaları"
+
+#: ../distraction-free-writing-mode-themes.php:76
+msgid "Main configuration"
+msgstr "Ana ayarlar"
+
+#: ../distraction-free-writing-mode-themes.php:78
+msgid "Selected theme"
+msgstr "Seçilen tema"
+
+#: ../distraction-free-writing-mode-themes.php:79
+msgid "Force Distraction Free Writing mode"
+msgstr "Basit Mod'u Zorla"
+
+#: ../distraction-free-writing-mode-themes.php:80
+msgid "Custom CSS"
+msgstr "Özel CSS"
+
+#: ../distraction-free-writing-mode-themes.php:92
+msgid "Yes"
+msgstr "Evet"
+
+#: ../distraction-free-writing-mode-themes.php:114
+msgid "DFWM Themes: Incorrect or malicious form data received."
+msgstr "DFWM Themes: Hatalı veya geçerli olmayan veri girildi."
+
+#: ../templates/admin/footer.php:2
+msgid "Plugin created by"
+msgstr "Eklenti geliştiricisi"
+
+#: ../templates/admin/footer.php:4
+msgid "Inspired by"
+msgstr "İlham alınan"
+
+#: ../templates/admin/footer.php:4 ../templates/admin/footer.php:7
+msgid "and"
+msgstr "ve"
+
+#: ../templates/admin/footer.php:5
+msgid "DFW Matrix plugin by mjangda."
+msgstr "mjangda tarafından DFW Matrix eklentisi."
+
+#: ../templates/admin/footer.php:7
+msgid "Images by"
+msgstr "Resimler:"
+
+#: ../templates/admin/footer.php:9
+msgid "Images used with Creative Commons license."
+msgstr "Görseller Creative Commons lisansı altında kullanılmıştır."
+
+#: ../templates/admin/footer.php:11
+msgid "Plugin banner created by"
+msgstr "Eklenti bannerini oluşturan: "
+
+#: ../templates/admin/fields/custom_theme_css.php:2
+msgid "Use this if you have selected the Custom option above."
+msgstr "Yukarıda \"Özel\" i seçmişseniz kullanılacak css kodunu giriniz."
+
+#: ../templates/admin/fields/selected_theme.php:1
+msgid "Default WP theme"
+msgstr "Varsayılan tema"
+
+#: ../templates/admin/fields/selected_theme.php:10
+msgid "Preview"
+msgstr "Önizleme"
+
+#: ../templates/admin/fields/selected_theme.php:16
+msgid "Custom - Enter CSS below"
+msgstr "Özel - Aşağıya Özel CSS kodu girebilirsiniz"

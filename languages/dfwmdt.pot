@@ -1,0 +1,91 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Distraction Free Writing mode Themes\n"
+"POT-Creation-Date: 2013-09-28 21:56+0200\n"
+"PO-Revision-Date: 2013-09-28 21:56+0200\n"
+"Last-Translator: Mustafa Uysal <mustafa@lettoblog.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../distraction-free-writing-mode-themes.php:68
+#: ../templates/admin/main.php:4
+msgid "Distraction Free Writing mode Themes Configuration"
+msgstr ""
+
+#: ../distraction-free-writing-mode-themes.php:68
+msgid "DFWM Themes"
+msgstr ""
+
+#: ../distraction-free-writing-mode-themes.php:76
+msgid "Main configuration"
+msgstr ""
+
+#: ../distraction-free-writing-mode-themes.php:78
+msgid "Selected theme"
+msgstr ""
+
+#: ../distraction-free-writing-mode-themes.php:79
+msgid "Force Distraction Free Writing mode"
+msgstr ""
+
+#: ../distraction-free-writing-mode-themes.php:80
+msgid "Custom CSS"
+msgstr ""
+
+#: ../distraction-free-writing-mode-themes.php:92
+msgid "Yes"
+msgstr ""
+
+#: ../distraction-free-writing-mode-themes.php:114
+msgid "DFWM Themes: Incorrect or malicious form data received."
+msgstr ""
+
+#: ../templates/admin/footer.php:2
+msgid "Plugin created by"
+msgstr ""
+
+#: ../templates/admin/footer.php:4
+msgid "Inspired by"
+msgstr ""
+
+#: ../templates/admin/footer.php:4 ../templates/admin/footer.php:7
+msgid "and"
+msgstr ""
+
+#: ../templates/admin/footer.php:5
+msgid "DFW Matrix plugin by mjangda."
+msgstr ""
+
+#: ../templates/admin/footer.php:7
+msgid "Images by"
+msgstr ""
+
+#: ../templates/admin/footer.php:9
+msgid "Images used with Creative Commons license."
+msgstr ""
+
+#: ../templates/admin/footer.php:11
+msgid "Plugin banner created by"
+msgstr ""
+
+#: ../templates/admin/fields/custom_theme_css.php:2
+msgid "Use this if you have selected the Custom option above."
+msgstr ""
+
+#: ../templates/admin/fields/selected_theme.php:1
+msgid "Default WP theme"
+msgstr ""
+
+#: ../templates/admin/fields/selected_theme.php:10
+msgid "Preview"
+msgstr ""
+
+#: ../templates/admin/fields/selected_theme.php:16
+msgid "Custom - Enter CSS below"
+msgstr ""
