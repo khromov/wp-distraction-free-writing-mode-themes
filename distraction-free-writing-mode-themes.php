@@ -59,7 +59,7 @@ class DFWMDT {
 
 	function force_distraction_free_mode() {
 		global $pagenow;
-		echo $this->template->t('force_dfwm_js', array('current_page' => $pagenow, 'current_action' => isset($_REQUEST['action']) ? $_REQUEST['action'] : ''));
+		echo $this->template->t( 'force_dfwm_js', array( 'current_page' => $pagenow, 'current_action' => isset( $_REQUEST['action'] ) ? $_REQUEST['action'] : '', 'current_user_role' => $this->current_user_role() ) );
 	}
 
 
@@ -71,12 +71,14 @@ class DFWMDT {
 		register_setting( 'dfwmdt-group', 'dfwmt_selected_theme', array( &$this, 'sanitize_selected_theme' ) );
 		register_setting( 'dfwmdt-group', 'dfwmt_force_distraction_free_mode', array( &$this, 'sanitize_distraction_free_mode' ) );
 		register_setting( 'dfwmdt-group', 'dfwmt_custom_theme_css', array( &$this, 'sanitize_custom_theme_css' ) );
+		register_setting( 'dfwmdt-group', 'dfwmt_distraction_free_mode_roles', array( &$this, 'sanitize_roles' ) );
 
 		add_settings_section( 'dfwmdt-main', __( 'Main configuration', self::text_domain ), array( &$this, 'admin_main_part' ), 'dfwmdt' );
 
 		add_settings_field( 'dfwmt_selected_theme', __( 'Selected theme', self::text_domain ), array( &$this, 'field_selected_theme' ), 'dfwmdt', 'dfwmdt-main' );
 		add_settings_field( 'dfwmt_custom_theme_css', __( 'Custom CSS', self::text_domain ), array( &$this, 'field_custom_theme_css' ), 'dfwmdt', 'dfwmdt-main' );
 		add_settings_field( 'dfwmt_force_distraction_free_mode', __( 'Force Distraction Free Writing mode', self::text_domain ), array( &$this, 'distraction_free_field' ), 'dfwmdt', 'dfwmdt-main' );
+		add_settings_field( 'dfwmt_distraction_free_mode_roles', __( 'User roles to force Distraction Free Mode', self::text_domain ), array( &$this, 'distraction_free_roles' ), 'dfwmdt', 'dfwmdt-main' );
 	}
 
 	function admin_main() {
@@ -96,6 +98,11 @@ class DFWMDT {
 	function field_custom_theme_css() {
 		echo $this->template->t( 'admin/fields/custom_theme_css' );
 	}
+
+	function distraction_free_roles() {
+		echo $this->template->t( 'admin/fields/force_roles' );
+	}
+
 
 	/** Sanitization **/
 	function sanitize_selected_theme( $in ) {
@@ -128,6 +135,15 @@ class DFWMDT {
 			return true;
 		}
 		return false;
+	}
+
+
+	function sanitize_roles( $roles ) {
+		if ( is_array( $roles ) ) {
+			return $roles;
+		}
+		$roles = array();
+		return $roles;
 	}
 
 	/** End sanitization **/
@@ -175,6 +191,18 @@ class DFWMDT {
 	}
 
 	/**
+	 * @return mixed | Current user' role
+	 */
+	function current_user_role() {
+		global $current_user;
+
+		$user_roles = $current_user->roles;
+		$user_role  = array_shift( $user_roles );
+
+		return $user_role;
+	}
+
+	/**
 	 * Plugin activation function
 	 **/
 	static function activate() {
@@ -191,7 +219,7 @@ class DFWMDT {
 	 * @param $user
 	 */
 	function dfwmt_user_theme_selection( $user ) {
-		echo $this->template->t( 'user/user_theme_selection', array('plugin_path' => __FILE__) );
+		echo $this->template->t( 'user/user_theme_selection', array( 'plugin_path' => __FILE__ ) );
 	}
 
 	function dfwmt_save_user_theme_selection( $user_id ) {
