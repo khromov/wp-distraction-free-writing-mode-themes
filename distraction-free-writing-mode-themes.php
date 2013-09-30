@@ -50,11 +50,11 @@ class DFWMDT {
 		/**
 		 * Include libs and dependencies
 		 **/
-		if ( ! class_exists( 'MicroTemplate' ) && ! class_exists( 'MT' ) )
+		if ( ! class_exists( 'MicroTemplate_v3' ) && ! class_exists( 'MT_v3' ) )
 			include( 'lib/microtemplate.class.php' );
 
 		//Register template directory by getting directory of current file
-		$this->template = new MicroTemplate( dirname( __FILE__ ) . '/templates/' );
+		$this->template = new MicroTemplate_v3( dirname( __FILE__ ) . '/templates/' );
 	}
 
 	function force_distraction_free_mode() {
@@ -181,7 +181,7 @@ class DFWMDT {
 		add_option( 'dfwmt_selected_theme', 'monokai' );
 
 		//Needed because WP hasn't called __construct on activation yet.
-		$template = new MicroTemplate( dirname( __FILE__ ) . '/templates/' );
+		$template = new MicroTemplate_v3( dirname( __FILE__ ) . '/templates/' );
 		add_option( 'dfwmt_custom_theme_css', $template->t( 'admin/css/default-custom-css' ) );
 	}
 

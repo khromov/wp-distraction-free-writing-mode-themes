@@ -4,7 +4,7 @@
 	 * For more information see:
 	 * http://khromov.wordpress.com/2012/08/09/micro-templates-for-rapid-web-design-prototyping-and-development-in-php/
 	 **/
-	class MicroTemplate
+	class MicroTemplate_v3
 	{
 		private $prefix;
 		private $suppress_errors;
@@ -78,7 +78,7 @@
 	 * Less flexible but easier to type:
 	 * MT::t('template-name');
 	 **/
-	class MT
+	class MT_v3
 	{
 		private $MicroTemplateInstance;
 		
