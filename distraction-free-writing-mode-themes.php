@@ -43,6 +43,8 @@ class DFWMDT {
 
 		add_action( 'show_user_profile', array( &$this, 'dfwmt_user_theme_selection' ) );
 		add_action( 'edit_user_profile', array( &$this, 'dfwmt_user_theme_selection' ) );
+		add_action( 'show_user_profile', array( &$this, 'dfwmt_user_force_zen_selection' ) );
+		add_action( 'edit_user_profile', array( &$this, 'dfwmt_user_force_zen_selection' ) );
 
 		add_action( 'personal_options_update', array( &$this, 'dfwmt_save_user_theme_selection' ) );
 		add_action( 'edit_user_profile_update', array( &$this, 'dfwmt_save_user_theme_selection' ) );
@@ -57,9 +59,12 @@ class DFWMDT {
 		$this->template = new MicroTemplate_v3( dirname( __FILE__ ) . '/templates/' );
 	}
 
+	/**
+	 * Whether to add javascript to be put into DFWM automatically
+	 */
 	function force_distraction_free_mode() {
-		global $pagenow;
-		echo $this->template->t('force_dfwm_js', array('current_page' => $pagenow, 'current_action' => isset($_REQUEST['action']) ? $_REQUEST['action'] : ''));
+		if($this->dfw_should_force_dfwm())
+			echo $this->template->t('force_dfwm_js');
 	}
 
 
@@ -150,6 +155,32 @@ class DFWMDT {
 		return $general_theme;
 	}
 
+	/**
+	 * Whether we should force DFWM for this user
+	 * @return @return mixed|void
+	 */
+	function dfw_should_force_dfwm()
+	{
+		global $pagenow;
+		$current_action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
+
+		//If we are editing a post
+		if ( ( $pagenow == 'post-new.php' || ( $pagenow == 'post.php' && $current_action == "edit" ) ) )
+		{
+			//Should we force dfwm?
+			$user_setting    = get_user_option( 'dfwmt_force_distraction_free_mode' );
+			$general_setting = get_option( 'dfwmt_force_distraction_free_mode' );
+
+			//user setting is only false when it hasn't been set yet otherwise it's 1 (on) or empty string (off)
+			if ( $user_setting !== false ) {
+				return $user_setting;
+			}
+			return $general_setting;
+		}
+
+
+	}
+
 
 	/** Add custom CSS to MCE and wordpress post page **/
 	function filter_mce_css( $mce_css ) {
@@ -194,11 +225,22 @@ class DFWMDT {
 		echo $this->template->t( 'user/user_theme_selection', array('plugin_path' => __FILE__) );
 	}
 
+	/**
+	 * Adding custom field for forcing dfw mode
+	 *
+	 * @param $user
+	 */
+	function dfwmt_user_force_zen_selection( $user )
+	{
+		echo $this->template->t( 'user/fields/user_force_dfwmt');
+	}
+
 	function dfwmt_save_user_theme_selection( $user_id ) {
 		if ( ! current_user_can( 'edit_user', $user_id ) )
 			return false;
 
 		update_user_meta( $user_id, 'dfwmt_selected_theme', $_POST['dfwmt_selected_theme'] );
+		update_user_meta( $user_id, 'dfwmt_force_distraction_free_mode', $_POST['dfwmt_force_distraction_free_mode'] );
 	}
 
 }

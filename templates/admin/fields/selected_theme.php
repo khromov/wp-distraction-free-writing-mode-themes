@@ -1,4 +1,4 @@
-<input type="radio" name="dfwmt_selected_theme" value="default"<?php echo get_option( 'dfwmt_selected_theme' ) == 'default' ? ' checked' : '' ?>/> <?php _e( 'Default WP theme', 'dfwmdt' ); ?>
+<input type="radio" name="dfwmt_selected_theme" value="default"<?php echo get_option( 'dfwmt_selected_theme' ) == 'default' ? ' checked' : '' ?>/> <?php _e( 'WordPress Default', 'dfwmdt' ); ?>
 <br />
 <?php
 $dir = $v['working_directory'] . '/css/*';
