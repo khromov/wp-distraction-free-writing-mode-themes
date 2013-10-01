@@ -174,22 +174,18 @@ class DFWMDT {
 	 * Whether we should force DFWM for this user
 	 * @return @return mixed|void
 	 */
-	function dfw_should_force_dfwm()
-	{
+	function dfw_should_force_dfwm() {
 		global $pagenow;
-		$current_action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
+		$current_action = isset( $_REQUEST['action'] ) ? $_REQUEST['action'] : '';
 
 		//If we are editing a post
-		if ( ( $pagenow == 'post-new.php' || ( $pagenow == 'post.php' && $current_action == "edit" ) ) )
-		{
+		if ( ( $pagenow == 'post-new.php' || ( $pagenow == 'post.php' && $current_action == "edit" ) ) ) {
 			//Should the class have dfwm forced? This overrides any other setting.
-			if(in_array( $this->current_user_role(), get_option( 'dfwmt_distraction_free_mode_roles' )))
-			{
+			if ( in_array( $this->current_user_role(), get_option( 'dfwmt_distraction_free_mode_roles' ) ) && ( get_option( 'dfwmt_force_distraction_free_mode' ) == true ) ) {
 				return "1";
 			}
 			//Else, let's check global / user settings
-			else
-			{
+			else {
 				$user_setting    = get_user_option( 'dfwmt_force_distraction_free_mode' );
 				$general_setting = get_option( 'dfwmt_force_distraction_free_mode' );
 
@@ -265,9 +261,10 @@ class DFWMDT {
 	 *
 	 * @param $user
 	 */
-	function dfwmt_user_force_zen_selection( $user )
-	{
-		echo $this->template->t( 'user/fields/user_force_dfwmt');
+	function dfwmt_user_force_zen_selection( $user ) {
+		$forced_roles = get_option( 'dfwmt_distraction_free_mode_roles' );
+		if ( ! ( in_array( $this->current_user_role(), $forced_roles ) && ( get_option( 'dfwmt_force_distraction_free_mode' ) == true ) ) )
+			echo $this->template->t( 'user/fields/user_force_dfwmt' );
 	}
 
 	function dfwmt_save_user_theme_selection( $user_id ) {
