@@ -13,10 +13,13 @@ Dark and light themes for WordPress Distraction Free Writing mode editor. Use on
 
 **New in 3.0**
 
-* Per-user theme settings
+* Option to auto-start distraction free writing mode when editing posts
+* Per-user distraction free theme settings
 * Internationalization support
-* Turkish language support
-* User roles based forcing distraction free mode
+* Auto-start distraction free mode based on user roles
+
+Translations:
+* Turkish
 
 Thanks to [m_uysl](http://profiles.wordpress.org/m_uysl) for these additions.
 
@@ -61,6 +64,16 @@ Your current Wordpress Theme can affect this plugin. Please submit a bug report 
 
 == Changelog ==
 
+= 3.0 =
+
+* Option to auto-start distraction free writing mode when editing posts
+* Per-user distraction free theme settings
+* Internationalization support
+* Auto-start distraction free mode based on user roles
+
+Translations:
+* Turkish
+
 = 2.1 =
 * Introducing Autolycus and ZenHub themes - check out the screenshots in the Screenshots tab!
 * Compatibility with other plugins is improved by applying some !important overrides.
@@ -90,6 +103,6 @@ Your current Wordpress Theme can affect this plugin. Please submit a bug report 
 Initial release
 
 == TODO ==
-* More themes! If you've made a nice theme, make sure to submit it through the Support forum!
+* More themes! (If you've made a theme, make sure to submit it through the Wordpress Support forum!)
 * Better instructions for making custom themes.
 * Theming the top bar. (Not done due to complexity in current themes, but future themes can technically do this.)
