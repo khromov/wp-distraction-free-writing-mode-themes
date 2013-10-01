@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Distraction Free Writing mode Themes\n"
-"POT-Creation-Date: 2013-09-29 15:56+0200\n"
-"PO-Revision-Date: 2013-09-29 15:57+0200\n"
+"POT-Creation-Date: 2013-10-01 22:11+0200\n"
+"PO-Revision-Date: 2013-10-01 22:21+0200\n"
 "Last-Translator: Mustafa Uysal <mustafa@lettoblog.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -13,37 +13,37 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../distraction-free-writing-mode-themes.php:67
+#: ../distraction-free-writing-mode-themes.php:72
 #: ../templates/admin/main.php:4
 msgid "Distraction Free Writing mode Themes Configuration"
-msgstr "Basit Mod Tema Ayarları"
+msgstr "Tam Ekran Yazım Modu Ayarları"
 
-#: ../distraction-free-writing-mode-themes.php:67
+#: ../distraction-free-writing-mode-themes.php:72
 msgid "DFWM Themes"
 msgstr "DFWM Temaları"
 
-#: ../distraction-free-writing-mode-themes.php:76
+#: ../distraction-free-writing-mode-themes.php:81
 msgid "Main configuration"
 msgstr "Ana ayarlar"
 
-#: ../distraction-free-writing-mode-themes.php:78
+#: ../distraction-free-writing-mode-themes.php:83
 msgid "Selected theme"
 msgstr "Seçilen tema"
 
-#: ../distraction-free-writing-mode-themes.php:79
+#: ../distraction-free-writing-mode-themes.php:84
 msgid "Custom CSS"
 msgstr "Özel CSS"
 
-#: ../distraction-free-writing-mode-themes.php:80
-#: ../templates/admin/fields/force_dfwmt.php:2
+#: ../distraction-free-writing-mode-themes.php:85
+#: ../templates/user/fields/user_force_dfwmt.php:4
 msgid "Force Distraction Free Writing mode"
-msgstr "Basit Mod'u Zorla"
+msgstr "Tam Ekran Yazım Moduna zorla"
 
-#: ../distraction-free-writing-mode-themes.php:81
-msgid "User roles to force Distraction Free Mode"
-msgstr "Basit Mod'a Zorlanacak Kullanıcı Seviyeleri"
+#: ../distraction-free-writing-mode-themes.php:86
+msgid "Force Distraction Free Writing mode (overrides user profile setting)"
+msgstr "Tam Ekran Yazım Moduna zorla ( kullanıcının seçimlerini yok sayar )"
 
-#: ../distraction-free-writing-mode-themes.php:117
+#: ../distraction-free-writing-mode-themes.php:121
 msgid "DFWM Themes: Incorrect or malicious form data received."
 msgstr "DFWM Themes: Hatalı veya geçerli olmayan veri girildi."
 
@@ -75,13 +75,33 @@ msgstr "Görseller Creative Commons lisansı altında kullanılmıştır."
 msgid "Plugin banner created by"
 msgstr "Eklenti bannerini oluşturan: "
 
+#: ../templates/admin/main.php:8
+msgid ""
+"From this screen you can control the global settings for this plugin. If you "
+"have multiple users on your blog, they can set their own preferences in their"
+msgstr ""
+"Bu sayfadan eklentinin genel ayarlarını yapılandırabilirsin. Eğer çok "
+"yazarlı bir site sahibiyseniz, kullanıcılar kendi tercihlerini "
+
+#: ../templates/admin/main.php:9
+msgid "profile settings"
+msgstr "profil ayarlarından yapabilirler"
+
 #: ../templates/admin/fields/custom_theme_css.php:2
 msgid "Use this if you have selected the Custom option above."
 msgstr "Yukarıda \"Özel\" i seçmişseniz kullanılacak css kodunu giriniz."
 
+#: ../templates/admin/fields/force_dfwmt.php:2
+msgid ""
+"Force Distraction Free Writing mode (unless user has changed their profile "
+"settings)"
+msgstr ""
+"Tam ekran yazım moduna zorla ( aksi taktirde kullanıcılar profil "
+"ayarlarından düzenleyebilirler )"
+
 #: ../templates/admin/fields/selected_theme.php:1
-msgid "Default WP theme"
-msgstr "Varsayılan tema"
+msgid "WordPress Default"
+msgstr " - WordPress varsayılan -"
 
 #: ../templates/admin/fields/selected_theme.php:9
 msgid "Preview"
@@ -93,15 +113,28 @@ msgstr "Özel - Aşağıya Özel CSS kodu girebilirsiniz"
 
 #: ../templates/user/user_theme_selection.php:3
 msgid "Distraction Free Theme"
-msgstr "Basit Yazım Modu Teması"
+msgstr "Tam Ekran Yazım Modu Teması"
 
-#: ../templates/user/fields/user_theme_field.php:8
-msgid "- Admin default -"
-msgstr "- Admin varsayılan - "
-
-#: ../templates/user/fields/user_theme_field.php:11
+#: ../templates/user/fields/user_theme_field.php:17
 msgid "- WordPress default -"
 msgstr " - WordPress varsayılan -"
+
+#: ../templates/user/fields/user_theme_field.php:20
+msgid "- Theme set by Admin -"
+msgstr " - Yönetici tarafından belirlenen tema -"
+
+#: ../templates/user/fields/user_theme_field.php:23
+msgid "- Custom -"
+msgstr " - Özel -"
+
+#~ msgid "User roles to force Distraction Free Mode"
+#~ msgstr "Basit Mod'a Zorlanacak Kullanıcı Seviyeleri"
+
+#~ msgid "Default WP theme"
+#~ msgstr "Varsayılan tema"
+
+#~ msgid "- Admin default -"
+#~ msgstr "- Admin varsayılan - "
 
 #~ msgid "Yes"
 #~ msgstr "Evet"
