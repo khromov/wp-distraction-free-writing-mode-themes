@@ -16,6 +16,7 @@ Dark and light themes for WordPress Distraction Free Writing mode editor. Use on
 * Per-user theme settings
 * Internationalization support
 * Turkish language support
+* User roles based forcing distraction free mode
 
 Thanks to [m_uysl](http://profiles.wordpress.org/m_uysl) for these additions.
 
