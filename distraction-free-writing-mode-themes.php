@@ -248,6 +248,9 @@ class DFWMDT {
 	 */
 	function dfwmt_user_force_zen_selection( $user ) {
 		$forced_roles = get_option( 'dfwmt_distraction_free_mode_roles' );
+		if ( ! is_array( $forced_roles ) )
+			$forced_roles = array();
+		
 		if ( ! ( in_array( $this->current_user_role(), $forced_roles ) ) )
 			echo $this->template->t( 'user/fields/user_force_dfwmt' );
 	}
@@ -260,6 +263,9 @@ class DFWMDT {
 
 		//Update the force dfwm setting only if the user can select it
 		$forced_roles = get_option( 'dfwmt_distraction_free_mode_roles' );
+		if ( ! is_array( $forced_roles ) )
+			$forced_roles = array();
+
 		if ( ! ( in_array( $this->current_user_role(), $forced_roles ) ) )
 			update_user_meta( $user_id, 'dfwmt_force_distraction_free_mode', $_POST['dfwmt_force_distraction_free_mode'] );
 	}
