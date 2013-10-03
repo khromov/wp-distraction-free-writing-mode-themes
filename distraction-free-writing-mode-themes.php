@@ -82,18 +82,13 @@ class DFWMDT {
 
 		add_settings_field( 'dfwmt_selected_theme', __( 'Selected theme', self::text_domain ), array( &$this, 'field_selected_theme' ), 'dfwmdt', 'dfwmdt-main' );
 		add_settings_field( 'dfwmt_custom_theme_css', __( 'Custom CSS', self::text_domain ), array( &$this, 'field_custom_theme_css' ), 'dfwmdt', 'dfwmdt-main' );
-		add_settings_field( 'dfwmt_force_distraction_free_mode', __( 'Force Distraction Free Writing mode', self::text_domain ), array( &$this, 'distraction_free_field' ), 'dfwmdt', 'dfwmdt-main' );
-		add_settings_field( 'dfwmt_distraction_free_mode_roles', __( 'Force Distraction Free Writing mode (overrides user profile setting)', self::text_domain ), array( &$this, 'distraction_free_roles' ), 'dfwmdt', 'dfwmdt-main' );
+		add_settings_field( 'dfwmt_distraction_free_mode_roles', __( 'Force Distraction Free Writing mode for the following user classes', self::text_domain ), array( &$this, 'distraction_free_roles' ), 'dfwmdt', 'dfwmdt-main' );
 	}
 
 	function admin_main() {
 		echo $this->template->t( 'admin/js-popup' );
 		echo $this->template->t( 'admin/main' );
 		echo $this->template->t( 'admin/footer' );
-	}
-
-	function distraction_free_field() {
-		echo $this->template->t( 'admin/fields/force_dfwmt' );
 	}
 
 	function field_selected_theme() {
@@ -177,26 +172,18 @@ class DFWMDT {
 	function dfw_should_force_dfwm() {
 		global $pagenow;
 		$current_action = isset( $_REQUEST['action'] ) ? $_REQUEST['action'] : '';
-
+		
 		//If we are editing a post
 		if ( ( $pagenow == 'post-new.php' || ( $pagenow == 'post.php' && $current_action == "edit" ) ) ) {
-			//Should the class have dfwm forced? This overrides any other setting.
-			if ( in_array( $this->current_user_role(), get_option( 'dfwmt_distraction_free_mode_roles' ) ) && ( get_option( 'dfwmt_force_distraction_free_mode' ) == true ) ) {
+			//Should the class have dfwm forced? This overrides user setting
+			if ( in_array( $this->current_user_role(), get_option( 'dfwmt_distraction_free_mode_roles' ) ) ) {
 				return "1";
 			}
-			//Else, let's check global / user settings
+			//Else, let's check user settings
 			else {
-				$user_setting    = get_user_option( 'dfwmt_force_distraction_free_mode' );
-				$general_setting = get_option( 'dfwmt_force_distraction_free_mode' );
-
-				//user setting is only false when it hasn't been set yet otherwise it's 1 (on) or empty string (off)
-				if ( $user_setting !== false ) {
-					return $user_setting;
-				}
-				return $general_setting;
+				return get_user_option( 'dfwmt_force_distraction_free_mode' );
 			}
 		}
-
 
 	}
 
@@ -263,7 +250,7 @@ class DFWMDT {
 	 */
 	function dfwmt_user_force_zen_selection( $user ) {
 		$forced_roles = get_option( 'dfwmt_distraction_free_mode_roles' );
-		if ( ! ( in_array( $this->current_user_role(), $forced_roles ) && ( get_option( 'dfwmt_force_distraction_free_mode' ) == true ) ) )
+		if ( ! ( in_array( $this->current_user_role(), $forced_roles ) ) )
 			echo $this->template->t( 'user/fields/user_force_dfwmt' );
 	}
 
@@ -272,7 +259,11 @@ class DFWMDT {
 			return false;
 
 		update_user_meta( $user_id, 'dfwmt_selected_theme', $_POST['dfwmt_selected_theme'] );
-		update_user_meta( $user_id, 'dfwmt_force_distraction_free_mode', $_POST['dfwmt_force_distraction_free_mode'] );
+
+		//Update the force dfwm setting only if the user can select it
+		$forced_roles = get_option( 'dfwmt_distraction_free_mode_roles' );
+		if ( ! ( in_array( $this->current_user_role(), $forced_roles ) ) )
+			update_user_meta( $user_id, 'dfwmt_force_distraction_free_mode', $_POST['dfwmt_force_distraction_free_mode'] );
 	}
 
 }
