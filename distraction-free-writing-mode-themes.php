@@ -12,8 +12,6 @@ Text Domain: dfwmdt
 Domain Path: /languages/
 */
 
-$main = new DFWMDT();
-
 class DFWMDT {
 	public $template;
 	const text_domain = "dfwmdt";
@@ -267,3 +265,5 @@ class DFWMDT {
 	}
 
 }
+
+$main = new DFWMDT();
