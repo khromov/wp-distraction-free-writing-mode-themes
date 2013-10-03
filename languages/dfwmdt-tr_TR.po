@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Distraction Free Writing mode Themes\n"
-"POT-Creation-Date: 2013-10-01 22:11+0200\n"
-"PO-Revision-Date: 2013-10-01 22:21+0200\n"
+"POT-Creation-Date: 2013-10-01 02:03+0100\n"
+"PO-Revision-Date: 2013-10-03 05:57+0200\n"
 "Last-Translator: Mustafa Uysal <mustafa@lettoblog.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -13,69 +13,41 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../distraction-free-writing-mode-themes.php:72
-#: ../templates/admin/main.php:4
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/distraction-free-writing-mode-themes.php:72
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/main.php:4
 msgid "Distraction Free Writing mode Themes Configuration"
 msgstr "Tam Ekran Yazım Modu Ayarları"
 
-#: ../distraction-free-writing-mode-themes.php:72
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/distraction-free-writing-mode-themes.php:72
 msgid "DFWM Themes"
 msgstr "DFWM Temaları"
 
-#: ../distraction-free-writing-mode-themes.php:81
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/distraction-free-writing-mode-themes.php:81
 msgid "Main configuration"
 msgstr "Ana ayarlar"
 
-#: ../distraction-free-writing-mode-themes.php:83
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/distraction-free-writing-mode-themes.php:83
 msgid "Selected theme"
 msgstr "Seçilen tema"
 
-#: ../distraction-free-writing-mode-themes.php:84
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/distraction-free-writing-mode-themes.php:84
 msgid "Custom CSS"
 msgstr "Özel CSS"
 
-#: ../distraction-free-writing-mode-themes.php:85
-#: ../templates/user/fields/user_force_dfwmt.php:4
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/distraction-free-writing-mode-themes.php:85
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/user/fields/user_force_dfwmt.php:4
 msgid "Force Distraction Free Writing mode"
 msgstr "Tam Ekran Yazım Moduna zorla"
 
-#: ../distraction-free-writing-mode-themes.php:86
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/distraction-free-writing-mode-themes.php:86
 msgid "Force Distraction Free Writing mode (overrides user profile setting)"
 msgstr "Tam Ekran Yazım Moduna zorla ( kullanıcının seçimlerini yok sayar )"
 
-#: ../distraction-free-writing-mode-themes.php:121
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/distraction-free-writing-mode-themes.php:121
 msgid "DFWM Themes: Incorrect or malicious form data received."
 msgstr "DFWM Themes: Hatalı veya geçerli olmayan veri girildi."
 
-#: ../templates/admin/footer.php:2
-msgid "Plugin created by"
-msgstr "Eklenti geliştiricisi"
-
-#: ../templates/admin/footer.php:5
-msgid "Inspired by"
-msgstr "İlham alınan"
-
-#: ../templates/admin/footer.php:6 ../templates/admin/footer.php:10
-msgid "and"
-msgstr "ve"
-
-#: ../templates/admin/footer.php:7
-msgid "DFW Matrix plugin by mjangda."
-msgstr "mjangda tarafından DFW Matrix eklentisi."
-
-#: ../templates/admin/footer.php:9
-msgid "Images by"
-msgstr "Resimler:"
-
-#: ../templates/admin/footer.php:13
-msgid "Images used with Creative Commons license."
-msgstr "Görseller Creative Commons lisansı altında kullanılmıştır."
-
-#: ../templates/admin/footer.php:15
-msgid "Plugin banner created by"
-msgstr "Eklenti bannerini oluşturan: "
-
-#: ../templates/admin/main.php:8
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/main.php:8
 msgid ""
 "From this screen you can control the global settings for this plugin. If you "
 "have multiple users on your blog, they can set their own preferences in their"
@@ -83,15 +55,40 @@ msgstr ""
 "Bu sayfadan eklentinin genel ayarlarını yapılandırabilirsin. Eğer çok "
 "yazarlı bir site sahibiyseniz, kullanıcılar kendi tercihlerini "
 
-#: ../templates/admin/main.php:9
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/main.php:9
 msgid "profile settings"
 msgstr "profil ayarlarından yapabilirler"
 
-#: ../templates/admin/fields/custom_theme_css.php:2
-msgid "Use this if you have selected the Custom option above."
-msgstr "Yukarıda \"Özel\" i seçmişseniz kullanılacak css kodunu giriniz."
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/footer.php:2
+msgid "Plugin created by"
+msgstr "Eklenti geliştiricisi"
 
-#: ../templates/admin/fields/force_dfwmt.php:2
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/footer.php:5
+msgid "Inspired by"
+msgstr "İlham alınan"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/footer.php:6
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/footer.php:10
+msgid "and"
+msgstr "ve"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/footer.php:7
+msgid "DFW Matrix plugin by mjangda."
+msgstr "mjangda tarafından DFW Matrix eklentisi."
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/footer.php:9
+msgid "Images by"
+msgstr "Resimler:"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/footer.php:13
+msgid "Images used with Creative Commons license."
+msgstr "Görseller Creative Commons lisansı altında kullanılmıştır."
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/footer.php:15
+msgid "Plugin banner created by"
+msgstr "Eklenti bannerini oluşturan: "
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/fields/force_dfwmt.php:2
 msgid ""
 "Force Distraction Free Writing mode (unless user has changed their profile "
 "settings)"
@@ -99,31 +96,35 @@ msgstr ""
 "Tam ekran yazım moduna zorla ( aksi taktirde kullanıcılar profil "
 "ayarlarından düzenleyebilirler )"
 
-#: ../templates/admin/fields/selected_theme.php:1
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/fields/selected_theme.php:1
 msgid "WordPress Default"
 msgstr " - WordPress varsayılan -"
 
-#: ../templates/admin/fields/selected_theme.php:9
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/fields/selected_theme.php:9
 msgid "Preview"
 msgstr "Önizleme"
 
-#: ../templates/admin/fields/selected_theme.php:15
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/fields/selected_theme.php:15
 msgid "Custom - Enter CSS below"
 msgstr "Özel - Aşağıya Özel CSS kodu girebilirsiniz"
 
-#: ../templates/user/user_theme_selection.php:3
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/fields/custom_theme_css.php:2
+msgid "Use this if you have selected the Custom option above."
+msgstr "Yukarıda \"Özel\" i seçmişseniz kullanılacak css kodunu giriniz."
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/user/user_theme_selection.php:3
 msgid "Distraction Free Theme"
 msgstr "Tam Ekran Yazım Modu Teması"
 
-#: ../templates/user/fields/user_theme_field.php:17
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/user/fields/user_theme_field.php:17
 msgid "- WordPress default -"
 msgstr " - WordPress varsayılan -"
 
-#: ../templates/user/fields/user_theme_field.php:20
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/user/fields/user_theme_field.php:20
 msgid "- Theme set by Admin -"
 msgstr " - Yönetici tarafından belirlenen tema -"
 
-#: ../templates/user/fields/user_theme_field.php:23
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/user/fields/user_theme_field.php:23
 msgid "- Custom -"
 msgstr " - Özel -"
 
