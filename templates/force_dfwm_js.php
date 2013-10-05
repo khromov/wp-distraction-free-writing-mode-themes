@@ -1,5 +1,5 @@
 <script type="text/javascript">
-	jQuery(document).ready(function () {
+	jQuery(window).bind("load", function() {
 		fullscreen.on();
 	});
 </script>
