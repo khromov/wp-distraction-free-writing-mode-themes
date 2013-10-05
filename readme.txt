@@ -19,6 +19,7 @@ Dark and light themes for WordPress Distraction Free Writing mode editor. Use on
 * Auto-start distraction free mode based on user roles
 
 Translations:
+
 * Turkish
 
 Thanks to [m_uysl](http://profiles.wordpress.org/m_uysl) for these additions.
@@ -66,7 +67,7 @@ Your current Wordpress Theme can affect this plugin. Please submit a bug report 
 
 = 3.0.1 =
 
-* Minor bug fix
+* Bug fix for titles in Distraction Free Writing Mode when force option was enabled
 
 = 3.0 =
 
