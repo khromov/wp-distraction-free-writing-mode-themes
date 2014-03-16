@@ -1,0 +1,144 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Distraction Free Writing mode Themes\n"
+"POT-Creation-Date: 2013-10-01 02:03+0100\n"
+"PO-Revision-Date: 2014-02-06 11:22+0100\n"
+"Last-Translator: jelena kovacevic <jecajeca260@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/distraction-free-writing-mode-themes.php:72
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/main.php:4
+msgid "Distraction Free Writing mode Themes Configuration"
+msgstr "Configuración de Temas Libres de Distracción modo de escritura "
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/distraction-free-writing-mode-themes.php:72
+msgid "DFWM Themes"
+msgstr "Temas DFWM "
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/distraction-free-writing-mode-themes.php:81
+msgid "Main configuration"
+msgstr "Configuración principal"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/distraction-free-writing-mode-themes.php:83
+msgid "Selected theme"
+msgstr "Tema seleccionado"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/distraction-free-writing-mode-themes.php:84
+msgid "Custom CSS"
+msgstr "CSS personalizado"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/distraction-free-writing-mode-themes.php:85
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/user/fields/user_force_dfwmt.php:4
+msgid "Force Distraction Free Writing mode"
+msgstr "Forzar modo de Escritura sin Distracción"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/distraction-free-writing-mode-themes.php:86
+msgid "Force Distraction Free Writing mode (overrides user profile setting)"
+msgstr ""
+"Forzar el modo de escritura sin Distraction (anula la configuración del "
+"perfil de usuario)"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/distraction-free-writing-mode-themes.php:121
+msgid "DFWM Themes: Incorrect or malicious form data received."
+msgstr "Temas DFWM: Datos del formulario incorrectos o malévolos recibidos."
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/main.php:8
+msgid ""
+"From this screen you can control the global settings for this plugin. If you "
+"have multiple users on your blog, they can set their own preferences in their"
+msgstr ""
+"Desde esta pantalla se puede controlar la configuración global  este plugin. "
+"Si tiene varios usuarios en su blog, pueden establecer sus propias "
+"preferencias en su"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/main.php:9
+msgid "profile settings"
+msgstr "configuración de perfil"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/footer.php:2
+msgid "Plugin created by"
+msgstr "Plugin creado por"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/footer.php:5
+msgid "Inspired by"
+msgstr "Inspirado por"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/footer.php:6
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/footer.php:10
+msgid "and"
+msgstr "y"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/footer.php:7
+msgid "DFW Matrix plugin by mjangda."
+msgstr "Plugin Matrix DFW por mjangda."
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/footer.php:9
+msgid "Images by"
+msgstr "Imágenes por"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/footer.php:13
+msgid "Images used with Creative Commons license."
+msgstr "Imágenes usadas con licencia Creative Commons."
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/footer.php:15
+msgid "Plugin banner created by"
+msgstr "Pancarta Plugin creada por"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/fields/force_dfwmt.php:2
+msgid ""
+"Force Distraction Free Writing mode (unless user has changed their profile "
+"settings)"
+msgstr ""
+"Forzar modo de Escritura sin Distracción (a no ser que el usuario haya "
+"cambiado su configuración de perfil)"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/fields/selected_theme.php:1
+msgid "WordPress Default"
+msgstr "WordPress por defecto"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/fields/selected_theme.php:9
+msgid "Preview"
+msgstr "Vista previa"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/fields/selected_theme.php:15
+msgid "Custom - Enter CSS below"
+msgstr "Personalizado - Introduzca CSS debajo"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/admin/fields/custom_theme_css.php:2
+msgid "Use this if you have selected the Custom option above."
+msgstr "Usar esta opción si ha seleccionado la opción Personalizada de arriba."
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/user/user_theme_selection.php:3
+msgid "Distraction Free Theme"
+msgstr "Tema Libre de Distracción"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/user/fields/user_theme_field.php:17
+msgid "- WordPress default -"
+msgstr "- WordPress por defecto -"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/user/fields/user_theme_field.php:20
+msgid "- Theme set by Admin -"
+msgstr "- Tema fijado por Admin -"
+
+#: Z:\wpdev\wp-content\plugins\wp-distraction-free-writing-mode-themes/templates/user/fields/user_theme_field.php:23
+msgid "- Custom -"
+msgstr "- Custom -"
+
+#~ msgid "User roles to force Distraction Free Mode"
+#~ msgstr "Basit Mod'a Zorlanacak Kullanıcı Seviyeleri"
+
+#~ msgid "Default WP theme"
+#~ msgstr "Varsayılan tema"
+
+#~ msgid "- Admin default -"
+#~ msgstr "- Admin varsayılan - "
+
+#~ msgid "Yes"
+#~ msgstr "Evet"

@@ -65,6 +65,11 @@ Your current Wordpress Theme can affect this plugin. Please submit a bug report 
 
 == Changelog ==
 
+= 3.1.0 =
+* Improved themes to fix some issues with WordPress themes overriding the Distraction Free styles.
+* Improved loading of Custom CSS
+* New Spanish translation, thanks Andrew Kurtis at WebHostingHub
+
 = 3.0.1 =
 
 * Bug fix for titles in Distraction Free Writing Mode when force option was enabled
