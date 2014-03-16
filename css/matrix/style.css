@@ -1,5 +1,6 @@
 body.wp-fullscreen-editor *
 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 	color: #00df00 !important;
 	background: transparent !important;
 }

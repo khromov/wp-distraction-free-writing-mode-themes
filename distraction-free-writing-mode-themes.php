@@ -3,7 +3,7 @@
 Plugin Name: Distraction Free Writing mode Themes
 Plugin URI: http://wordpress.org/extend/plugins/distraction-free-writing-mode-themes/
 Description: Provides dark and light themes for for Distraction Free Writing mode. Use one of the beautiful built-in themes or write your own.
-Version: 3.0.1
+Version: 3.1.0
 License: GPL2
 Author: khromov, m_uysl
 Author URI: http://khromov.wordpress.com
@@ -33,10 +33,9 @@ class DFWMDT {
 		/**
 		 * Menu stuff
 		 **/
-		//TODO: Should this be wrapped in is_admin(), check what other user classes can do.
 		add_action( 'admin_menu', array( &$this, 'register_admin_menus' ) );
 		add_action( 'admin_init', array( &$this, 'register_settings' ) );
-		add_action( 'admin_footer', array( &$this, 'force_distraction_free_mode' ) );
+		add_action( 'admin_footer', array( &$this, 'force_distraction_free_mode' ));
 
 
 		add_action( 'show_user_profile', array( &$this, 'dfwmt_user_theme_selection' ) );
@@ -46,6 +45,12 @@ class DFWMDT {
 
 		add_action( 'personal_options_update', array( &$this, 'dfwmt_save_user_theme_selection' ) );
 		add_action( 'edit_user_profile_update', array( &$this, 'dfwmt_save_user_theme_selection' ) );
+
+		/** Add query vars to load custom CSS **/
+		add_filter('query_vars', array($this, 'plugin_add_trigger'));
+
+		/** Load custom CSS if query var found */
+		add_action('template_redirect', array($this, 'plugin_trigger_check'));
 
 		/**
 		 * Include libs and dependencies
@@ -189,7 +194,7 @@ class DFWMDT {
 	/** Add custom CSS to MCE and wordpress post page **/
 	function filter_mce_css( $mce_css ) {
 		if ( $this->dfw_current_theme() == 'custom' ) {
-			$mce_css .= ', ' . plugins_url( 'css/custom.css.php', __FILE__ );
+			$mce_css .= ', ' . (site_url() . '/?dfwmt_custom_css=1');
 		}
 		else if ( $this->dfw_current_theme() != 'default' ) {
 			$mce_css .= ', ' . plugins_url( 'css/' . $this->dfw_current_theme() . '/style.css', __FILE__ );
@@ -202,7 +207,7 @@ class DFWMDT {
 	function dfw_terminal_style() {
 
 		if ( $this->dfw_current_theme() == 'custom' ) {
-			wp_enqueue_style( 'fullscreen-style', plugins_url( 'css/custom.css.php', __FILE__ ) );
+			wp_enqueue_style( 'fullscreen-style', (site_url() . '/?dfwmt_custom_css=1'));
 		}
 		else if ( $this->dfw_current_theme() != 'default' ) {
 			wp_enqueue_style( 'fullscreen-style', plugins_url( 'css/' . $this->dfw_current_theme() . '/style.css', __FILE__ ) );
@@ -270,6 +275,22 @@ class DFWMDT {
 			update_user_meta( $user_id, 'dfwmt_force_distraction_free_mode', $_POST['dfwmt_force_distraction_free_mode'] );
 	}
 
+	function plugin_add_trigger($vars)
+	{
+		$vars[] = 'dfwmt_custom_css';
+		return $vars;
+	}
+
+
+	function plugin_trigger_check()
+	{
+		if(intval(get_query_var('dfwmt_custom_css')) === 1)
+		{
+			header("Content-type: text/css");
+			echo get_option('dfwmt_custom_theme_css');
+			die();
+		}
+	}
 }
 
 $main = new DFWMDT();

@@ -1,7 +1,13 @@
 /** Notice: Below you will find the skeleton to a theme. Simply change the color values. **/
 body.wp-fullscreen-editor *
 {
+	/** Font family **/
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+
+	/** Text color **/
 	color: white !important;
+
+	/** Background color **/
 	background: transparent !important;
 }
 
