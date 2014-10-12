@@ -1,9 +1,9 @@
 === Distraction Free Writing mode Themes ===
 Contributors: khromov, m_uysl
 Tags: editor, themes, dark theme
-Requires at least: 3.5
-Tested up to: 3.8.1
-Stable tag: 3.1.0
+Requires at least: 4.0
+Tested up to: 4.0
+Stable tag: 4.0
 License: GPL2
 
 Provides dark and light themes for for Distraction Free Writing mode. Use one of the beautiful built-in themes or write your own.
