@@ -1,35 +1,57 @@
-body.wp-fullscreen-editor *
+/* Outer fullscreen background */
+#fullscreen-overlay
+{
+	background-color: #f3f2ec !important;
+}
+
+/* Title */
+.wp-fullscreen-active .wp-fullscreen-title
 {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-	color: #00df00 !important;
-	background: transparent !important;
-}
-
-#wp-fullscreen-body input[type=text],
-#wp-fullscreen-body textarea,
-#wp-fullscreen-body #wp-fullscreen-title-prompt-text
-{
+	font-size: 1.7em !important;
+	font-weight: bold !important;
 	color: #00df00 !important;
 }
 
-.wp-fullscreen-focus #wp-fullscreen-title,
-.wp-fullscreen-focus #wp-fullscreen-container
+/* Title border color */
+.wp-fullscreen-active.wp-dfw-show-ui .wp-fullscreen-title
 {
 	border-color: #00df00 !important;
 }
+
+/* Styles inside DFWM editor */
+html.wp-fullscreen body#tinymce
+{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+	color: #00df00 !important;
+}
+
+/* Word count (bottom) */
+#wp-fullscreen-count
+{
+	color: #6c645b !important;
+}
+
+/* Tagline (bottom) */
+#wp-fullscreen-tagline
+{
+	color: #6c645b !important;
+}
+
+
 #fullscreen-overlay
 {
 	background-color: black !important;
 }
 
+/* Word count (bottom) */
 #wp-fullscreen-count
 {
-	margin-top: 10px;
 	color: #00df00 !important;
 }
 
+/* Tagline (bottom) */
 #wp-fullscreen-tagline
 {
-	margin-top: 10px;
 	color: #00df00 !important;
 }

@@ -1,4 +1,4 @@
-/* Fullscreen background */
+/* Outer fullscreen background */
 #fullscreen-overlay
 {
 	background-color: #f3f2ec !important;
@@ -13,21 +13,22 @@
 	color: #6c645b !important;
 }
 
-/* Inside editor */
+/* Styles inside DFWM editor */
 html.wp-fullscreen body#tinymce
 {
+	background-color: #f3f2ec !important;
 	font-family: "Courier New", Courier, monospace !important;
 	font-size: 16px !important;
 	color: #6c645b !important;
 }
 
-/* Word count */
+/* Word count (bottom) */
 #wp-fullscreen-count
 {
 	color: #6c645b !important;
 }
 
-/* Tagline */
+/* Tagline (bottom) */
 #wp-fullscreen-tagline
 {
 	color: #6c645b !important;
