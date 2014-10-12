@@ -1,48 +1,34 @@
-body.wp-fullscreen-editor *
-{
-	color: #3f3a34 !important;
-	background: transparent !important;
-	
-	font-family: "Courier New", Courier, monospace !important;
-	font-size: 16px !important;
-	line-height: 24px !important;
-}
-
-#wp-fullscreen-body input[type=text],
-#wp-fullscreen-body textarea,
-#wp-fullscreen-body #wp-fullscreen-title-prompt-text
-{
-	
-	color: #3f3a34 !important;
-}
-
-#wp-fullscreen-body #wp-fullscreen-title-prompt-text
-{
-	font-family: "Courier New", Courier, monospace !important;
-	font-weight: bold;
-}
-
-.wp-fullscreen-focus #wp-fullscreen-title,
-.wp-fullscreen-focus #wp-fullscreen-container
-{
-	font-family: "Courier New", Courier, monospace !important;
-	font-weight: bold;
-	border-color: #d7d6ce !important;
-}
-
+/* Fullscreen background */
 #fullscreen-overlay
 {
 	background-color: #f3f2ec !important;
 }
 
-#wp-fullscreen-count
+/* Title */
+.wp-fullscreen-active .wp-fullscreen-title
 {
-	margin-top: 10px;
+	font-family: "Courier New", Courier, monospace !important;
+	font-size: 1.7em !important;
+	font-weight: bold !important;
 	color: #6c645b !important;
 }
 
+/* Inside editor */
+html.wp-fullscreen body#tinymce
+{
+	font-family: "Courier New", Courier, monospace !important;
+	font-size: 16px !important;
+	color: #6c645b !important;
+}
+
+/* Word count */
+#wp-fullscreen-count
+{
+	color: #6c645b !important;
+}
+
+/* Tagline */
 #wp-fullscreen-tagline
 {
-	margin-top: 10px;
 	color: #6c645b !important;
 }

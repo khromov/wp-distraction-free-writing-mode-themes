@@ -7,9 +7,20 @@ body.wp-fullscreen-editor *
 
 #wp-fullscreen-body input[type=text],
 #wp-fullscreen-body textarea,
-#wp-fullscreen-body #wp-fullscreen-title-prompt-text
+#wp-fullscreen-body #wp-fullscreen-title-prompt-text,
+
 {
 	color: #F8F8F2 !important;
+}
+
+/* 4.0 stuff */
+.wp-fullscreen-active .wp-editor-container,
+.wp-fullscreen-active .wp-fullscreen-title,
+html.wp-fullscreen,
+html.wp-fullscreen body#tinymce
+{
+	color: #F8F8F2 !important;
+	background-color: #272822 !important;
 }
 
 .wp-fullscreen-focus #wp-fullscreen-title,

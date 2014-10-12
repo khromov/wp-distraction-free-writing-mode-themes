@@ -1,5 +1,5 @@
 <script type="text/javascript">
 	jQuery(window).bind("load", function() {
-		fullscreen.on();
+		tinymce.activeEditor.execCommand('wpFullScreen');
 	});
 </script>

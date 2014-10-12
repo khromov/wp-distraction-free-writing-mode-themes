@@ -3,10 +3,10 @@
 Plugin Name: Distraction Free Writing mode Themes
 Plugin URI: http://wordpress.org/extend/plugins/distraction-free-writing-mode-themes/
 Description: Provides dark and light themes for for Distraction Free Writing mode. Use one of the beautiful built-in themes or write your own.
-Version: 3.1.0
+Version: 4.0
 License: GPL2
 Author: khromov, m_uysl
-Author URI: http://khromov.wordpress.com
+Author URI: http://snippets.khromov.se
 License: GPL2
 Text Domain: dfwmdt
 Domain Path: /languages/
@@ -106,7 +106,12 @@ class DFWMDT {
 		echo $this->template->t( 'admin/fields/force_roles' );
 	}
 
-	/** Sanitization **/
+	/**
+	 * Sanitization
+	 *
+	 * @param $in
+	 * @return string
+	 */
 	function sanitize_selected_theme( $in ) {
 		//Perhaps not correct validator
 		if ( strlen( $in ) == 0 ) {
@@ -170,7 +175,8 @@ class DFWMDT {
 
 	/**
 	 * Whether we should force DFWM for this user
-	 * @return @return mixed|void
+	 *
+	 * @return mixed|string
 	 */
 	function dfw_should_force_dfwm() {
 		global $pagenow;
