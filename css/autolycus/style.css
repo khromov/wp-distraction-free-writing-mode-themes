@@ -4,6 +4,13 @@
 	background-color: #f3f2ec !important;
 }
 
+/* Border around title and post content */
+.wp-fullscreen-active.wp-dfw-show-ui .wp-fullscreen-title,
+.wp-fullscreen-active.wp-dfw-show-ui .wp-editor-container
+{
+	border-color: #6c645b !important;
+}
+
 /* Title */
 .wp-fullscreen-active .wp-fullscreen-title
 {
@@ -16,20 +23,38 @@
 /* Styles inside DFWM editor */
 html.wp-fullscreen body#tinymce
 {
-	background-color: #f3f2ec !important;
 	font-family: "Courier New", Courier, monospace !important;
 	font-size: 16px !important;
 	color: #6c645b !important;
 }
 
+/* Set inner MCE panel to be transparent */
+div.mce-panel
+{
+	background: transparent !important;
+}
+
+/* Status bar background, not focused */
+.wp-fullscreen-active #wp-fullscreen-statusbar
+{
+	background: black !important;
+}
+
+/* Status bar focused (At bottom) */
+.wp-fullscreen-active.wp-dfw-show-ui #wp-fullscreen-statusbar
+{
+	background: #6c645b !important;
+	border-top: 1px solid #898257 !important;
+}
+
 /* Word count (bottom) */
 #wp-fullscreen-count
 {
-	color: #6c645b !important;
+	color: #f3f2ec !important;
 }
 
 /* Tagline (bottom) */
 #wp-fullscreen-tagline
 {
-	color: #6c645b !important;
+	color: #f3f2ec !important;
 }

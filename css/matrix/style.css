@@ -1,7 +1,16 @@
 /* Outer fullscreen background */
 #fullscreen-overlay
 {
-	background-color: #f3f2ec !important;
+	/* How to set background image */
+	/* background: url('http://cdn.wonderfulengineering.com/wp-content/uploads/2014/07/background-wallpapers-7.jpg'); */
+	background-color: black !important;
+}
+
+/* Border around title and post content */
+.wp-fullscreen-active.wp-dfw-show-ui .wp-fullscreen-title,
+.wp-fullscreen-active.wp-dfw-show-ui .wp-editor-container
+{
+	border-color: #00df00 !important;
 }
 
 /* Title */
@@ -13,12 +22,6 @@
 	color: #00df00 !important;
 }
 
-/* Title border color */
-.wp-fullscreen-active.wp-dfw-show-ui .wp-fullscreen-title
-{
-	border-color: #00df00 !important;
-}
-
 /* Styles inside DFWM editor */
 html.wp-fullscreen body#tinymce
 {
@@ -26,22 +29,23 @@ html.wp-fullscreen body#tinymce
 	color: #00df00 !important;
 }
 
-/* Word count (bottom) */
-#wp-fullscreen-count
+/* Set inner MCE panel to be transparent */
+div.mce-panel
 {
-	color: #6c645b !important;
+	background: transparent !important;
 }
 
-/* Tagline (bottom) */
-#wp-fullscreen-tagline
+/* Status bar background, not focused */
+.wp-fullscreen-active #wp-fullscreen-statusbar
 {
-	color: #6c645b !important;
+	background: black !important;
 }
 
-
-#fullscreen-overlay
+/* Status bar focused (At bottom) */
+.wp-fullscreen-active.wp-dfw-show-ui #wp-fullscreen-statusbar
 {
-	background-color: black !important;
+	background: black !important;
+	border-top: 1px solid #00df00 !important;
 }
 
 /* Word count (bottom) */
