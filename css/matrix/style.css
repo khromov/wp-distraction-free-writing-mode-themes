@@ -13,6 +13,10 @@
 	border-color: #00df00 !important;
 }
 
+.mce-panel{
+	background-color: transparent!important;
+}
+
 /* Title */
 .wp-fullscreen-active .wp-fullscreen-title
 {
