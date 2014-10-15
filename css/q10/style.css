@@ -1,38 +1,62 @@
-body.wp-fullscreen-editor *
-{
-	color: #d0a000 !important;
-	background: transparent !important;
-	
-	font-family: "Courier New", Courier, monospace !important;
-	font-size: 16px !important;
-	line-height: 24px !important;
-}
-
-#wp-fullscreen-body input[type=text],
-#wp-fullscreen-body textarea,
-#wp-fullscreen-body #wp-fullscreen-title-prompt-text
-{
-	color: #d0a000 !important;
-}
-
-.wp-fullscreen-focus #wp-fullscreen-title,
-.wp-fullscreen-focus #wp-fullscreen-container
-{
-	border-color: #404040 !important;
-}
+/* Outer fullscreen background */
 #fullscreen-overlay
 {
 	background-color: #0f0f0f !important;
 }
 
+/* Border around title and post content */
+.wp-fullscreen-active.wp-dfw-show-ui .wp-fullscreen-title,
+.wp-fullscreen-active.wp-dfw-show-ui .wp-editor-container
+{
+	border-color: #404040 !important;
+}
+
+/* Title */
+.wp-fullscreen-active .wp-fullscreen-title
+{
+	font-family: "Courier New", Courier, monospace !important;
+	font-size: 16px !important;
+	font-weight: bold;
+	line-height: 24px !important;
+	color: #d0a000 !important;
+}
+
+/* Styles inside DFWM editor */
+html.wp-fullscreen body#tinymce
+{
+	font-family: "Courier New", Courier, monospace !important;
+	font-size: 16px !important;
+	color: #d0a000 !important;
+}
+
+/* Set inner MCE panel to be transparent */
+div.mce-panel
+{
+	background: transparent !important;
+}
+
+/* Status bar background, not focused */
+.wp-fullscreen-active #wp-fullscreen-statusbar
+{
+	background-color: #0f0f0f !important;
+}
+
+/* Status bar focused (At bottom) */
+.wp-fullscreen-active.wp-dfw-show-ui #wp-fullscreen-statusbar
+{
+	background-color: #0f0f0f !important;
+	border-top: 1px solid #898257 !important;
+}
+
+/* Word count (bottom) */
 #wp-fullscreen-count
 {
-	margin-top: 10px;
 	color: #78b900 !important;
 }
 
+/* Tagline (bottom) */
 #wp-fullscreen-tagline
 {
-	margin-top: 10px;
 	color: #78b900 !important;
 }
+
